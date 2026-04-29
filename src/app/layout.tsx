@@ -77,7 +77,7 @@ const jsonLd = {
   name: "Ferndale Shield Exteriors",
   image: "https://ferndaleshieldexteriors.com/logo.png",
   url: "https://ferndaleshieldexteriors.com",
-  telephone: "(360) 555-0132",
+  telephone: "(360) 383-6184",
   email: "info@ferndaleshieldexteriors.com",
   description:
     "Eco-friendly pressure washing and lawn care serving Bellingham and Whatcom County, WA. Specializing in eco water reclamation technology.",

@@ -92,14 +92,14 @@ export default function Contact() {
             </p>
 
             <div className="space-y-6">
-              <a href="tel:+13605550132" className="flex items-center gap-4 text-white/80 hover:text-white transition-colors group">
+              <a href="tel:+13603836184" className="flex items-center gap-4 text-white/80 hover:text-white transition-colors group">
                 <div className="w-12 h-12 rounded-xl bg-forest-500/20 border border-forest-500/30 flex items-center justify-center group-hover:bg-forest-500/30 transition-colors">
                   <svg className="w-5 h-5 text-forest-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
                 <div>
-                  <p className="font-semibold">(360) 555-0132</p>
+                  <p className="font-semibold">(360) 383-6184</p>
                   <p className="text-white/40 text-sm">Call or text anytime</p>
                 </div>
               </a>

@@ -33,9 +33,9 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-forest-500/20 border border-forest-500/30 text-forest-300 text-sm font-semibold mb-6">
-              <span className="w-2 h-2 bg-forest-400 rounded-full animate-pulse-soft" />
-              Serving Bellingham &amp; Whatcom County
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-forest-500/20 border border-forest-500/30 text-forest-300 text-xs sm:text-sm font-semibold mb-6 md:mb-8">
+              <span className="w-2 h-2 bg-forest-400 rounded-full animate-pulse-soft flex-shrink-0" />
+              <span>Serving Bellingham &amp; Whatcom County</span>
             </span>
           </motion.div>
 
@@ -44,12 +44,12 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="heading-xl text-white mb-6 text-balance"
+            className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 md:mb-8 text-balance leading-[1.1]"
           >
             Bellingham&apos;s Premier Eco-Friendly{" "}
             <span className="text-forest-400">Pressure Washing</span> &amp;{" "}
             <span className="text-forest-400">Lawn Care</span>
-            <span className="block mt-2 text-2xl md:text-3xl lg:text-4xl font-normal text-white/70">
+            <span className="block mt-4 sm:mt-6 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal text-white/70 leading-snug">
               — Results You Can See in Hours, Not Days
             </span>
           </motion.h1>
@@ -59,7 +59,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="body-lg text-white/60 mb-10 max-w-2xl"
+            className="text-base sm:text-lg md:text-xl leading-relaxed text-white/60 mb-10 md:mb-12 max-w-2xl"
           >
             Transform your property with our eco water reclamation technology.
             We protect your home{" "}
@@ -72,16 +72,16 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.45 }}
-            className="flex flex-col sm:flex-row gap-4 mb-14"
+            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12 md:mb-16"
           >
-            <a href="#contact" className="btn-primary text-base">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <a href="#contact" className="btn-primary text-sm sm:text-base w-full sm:w-auto">
+              <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
               Get Instant Quote
             </a>
-            <a href="#pricing" className="btn-secondary text-base">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <a href="#pricing" className="btn-secondary text-sm sm:text-base w-full sm:w-auto">
+              <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               Book Spring Special
@@ -93,15 +93,15 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.6 }}
-            className="flex flex-wrap gap-6 md:gap-10"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
           >
             {trustSignals.map((signal) => (
               <div
                 key={signal.text}
-                className="flex items-center gap-3 text-white/70"
+                className="flex items-center gap-3 text-white/70 bg-white/5 sm:bg-transparent rounded-xl sm:rounded-none p-3 sm:p-0 border border-white/10 sm:border-none"
               >
-                <span className="text-2xl">{signal.icon}</span>
-                <span className="text-sm font-medium">{signal.text}</span>
+                <span className="text-xl sm:text-2xl flex-shrink-0">{signal.icon}</span>
+                <span className="text-xs sm:text-sm font-medium leading-tight">{signal.text}</span>
               </div>
             ))}
           </motion.div>
