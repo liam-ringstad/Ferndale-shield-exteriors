@@ -47,28 +47,35 @@ export default function Contact() {
     e.preventDefault();
     setSubmitting(true);
 
-    // Log form data (ready for EmailJS / Resend / CRM integration)
-    console.log("=== QUOTE REQUEST SUBMITTED ===");
-    console.log("Name:", formData.name);
-    console.log("Phone:", formData.phone);
-    console.log("Email:", formData.email);
-    console.log("Service:", formData.service);
-    console.log("Message:", formData.message);
-    console.log("Timestamp:", new Date().toISOString());
-    console.log("================================");
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    // Simulate async submission
-    await new Promise((resolve) => setTimeout(resolve, 800));
+      const data = await response.json();
 
-    setSubmitting(false);
-    setSubmitted(true);
-    toast.success("Quote request received! We'll respond within 1 hour during business hours.");
+      if (!response.ok) {
+        throw new Error(data.error?.message || "Failed to submit request");
+      }
 
-    // Reset form after delay
-    setTimeout(() => {
-      setFormData({ name: "", phone: "", email: "", service: "", message: "" });
-      setSubmitted(false);
-    }, 3000);
+      setSubmitted(true);
+      toast.success("Quote request received! We'll respond within 1 hour during business hours.");
+
+      // Reset form after delay
+      setTimeout(() => {
+        setFormData({ name: "", phone: "", email: "", service: "", message: "" });
+        setSubmitted(false);
+      }, 3000);
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast.error("Failed to send request. Please try calling us directly.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
