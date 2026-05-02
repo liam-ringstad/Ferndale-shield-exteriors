@@ -48,18 +48,24 @@ export default function Contact() {
     setSubmitting(true);
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "b0cb5bea-b291-4fcd-832e-73b90aa8e22c",
+          subject: `New Quote Request from ${formData.name}`,
+          from_name: "Ferndale Shield Website",
+          ...formData
+        }),
       });
 
       const data = await response.json();
 
-      if (!response.ok) {
-        throw new Error(data.error?.message || "Failed to submit request");
+      if (!response.ok || !data.success) {
+        throw new Error(data.message || "Failed to submit request");
       }
 
       setSubmitted(true);
