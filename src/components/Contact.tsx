@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import AnimateOnScroll from "./AnimateOnScroll";
 
@@ -27,6 +28,7 @@ interface FormData {
 }
 
 export default function Contact() {
+  const router = useRouter();
   const [formData, setFormData] = useState<FormData>({
     name: "",
     phone: "",
@@ -70,12 +72,7 @@ export default function Contact() {
 
       setSubmitted(true);
       toast.success("Quote request received! We'll respond within 1 hour during business hours.");
-
-      // Reset form after delay
-      setTimeout(() => {
-        setFormData({ name: "", phone: "", email: "", service: "", message: "" });
-        setSubmitted(false);
-      }, 3000);
+      router.push("/quote-received");
     } catch (error) {
       console.error("Form submission error:", error);
       toast.error("Failed to send request. Please try calling us directly.");
