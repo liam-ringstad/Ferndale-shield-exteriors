@@ -25,7 +25,7 @@ export default function QuoteReceived() {
           </div>
           <h1 className="heading-xl text-white mb-6">Quote Request Received!</h1>
           <p className="body-lg text-white/70 mb-10">
-            Thank you for reaching out to Ferndale Shield Exteriors. We've successfully received your information and our team will get back to you within 1 hour during business hours to discuss your property needs.
+            Thank you for reaching out to Ferndale Shield Exteriors. We&apos;ve successfully received your information and our team will get back to you within 1 hour during business hours to discuss your property needs.
           </p>
           <Link 
             href="/"
